@@ -28,7 +28,13 @@ const opzioni = {
             ],
 
         }
+    },
+    methods: {
+        isDone(done){
+            return (done==true) ? "done" : "nodone";
+        }
     }
+
 };
 
 createApp(opzioni).mount('#app')
