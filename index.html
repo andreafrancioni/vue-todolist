@@ -18,11 +18,14 @@
        
         <h1>Lista di cose da fare</h1>
         <ul>
-            <li :class="isDone(toDoList[i].done)" v-for="(item, i) in toDoList">
+            <li :class="isDone(toDoList[i].done)" v-for="(item, i) in toDoList" @click="setDone(toDoList[i].done, i)" >
+                <button @click="removeFromList(i)"><i class="fas fa-xmark"></i></button>
                 {{toDoList[i].do}}
             </li>
         </ul>
-
+        <h3>Aggiungi un nuovo elemento alla lista.</h3>
+        <input type="text" v-model="nuovoToDo">
+        <button @click="inserisciToDo()">Aggiungi</button>
     </div>
     
     <!-- JS -->

@@ -26,12 +26,40 @@ const opzioni = {
                     done: false
                 },
             ],
-
+            
+            nuovoToDo: "",
         }
     },
     methods: {
         isDone(done){
             return (done==true) ? "done" : "nodone";
+        },
+
+        setDone(done, i){
+            if(done == false){
+                console.log("imposto su true")
+                this.toDoList[i].done = true;
+                
+            }else{
+                console.log("imposto su false")
+                this.toDoList[i].done = false;
+            }
+            
+        },
+        
+        removeFromList(index){
+            console.log("rimuovi da lista");
+            console.log(this.toDoList[index])
+            this.toDoList.splice(index, 1);
+        },
+
+        inserisciToDo(){
+            const nuovoOggettoToDo = {
+                do: this.nuovoToDo,
+                done: false
+            }
+            this.toDoList.push(nuovoOggettoToDo);
+            this.nuovoToDo = "";
         }
     }
 
