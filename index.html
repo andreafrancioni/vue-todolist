@@ -24,7 +24,7 @@
             </li>
         </ul>
         <h3>Aggiungi un nuovo elemento alla lista.</h3>
-        <input type="text" v-model="nuovoToDo">
+        <input @keyup.enter="inserisciToDo()" type="text" v-model="nuovoToDo">
         <button @click="inserisciToDo()">Aggiungi</button>
     </div>
     
